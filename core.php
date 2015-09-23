@@ -1,6 +1,4 @@
 <?php
-
-$current_file = $_SERVER['SCRIPT_NAME'];
-
-
+    session_start();
+    $current_file = $_SERVER['SCRIPT_NAME'];
 ?>

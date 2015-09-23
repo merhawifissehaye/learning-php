@@ -1,14 +1,14 @@
- <?php
- require('core.php');
+<?php
 if(isset($_POST['username']) &&isset($_POST['password'])){
 	
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	
 	$password_hash = md5($password);
-	if(!empty($username)&&!empty($password)){
+	if(!empty($username) && !empty($password)){
 		
 		$query="SELECT id from users where username='$username' and password='$password_hash'";
+		echo "The query statement is: $query";
 		if($query_run = mysql_query($query)){
 			
 			$query_num_rows = mysql_num_rows($query_run);
@@ -37,8 +37,8 @@ if(isset($_POST['username']) &&isset($_POST['password'])){
  ?>
 <h1>LOGIN</h1>
 <form action="<?php echo $current_file;?>" method="POST">
-Username : <input type="text" name="username">
+	Username : <input type="text" name="username">
 
-Password : <input type="password" name="password"><br/><br/>
-<input type="submit" name="submit" value="Login!">
- </form>
+	Password : <input type="password" name="password"><br/><br/>
+	<input type="submit" name="submit" value="Login!">
+</form>
